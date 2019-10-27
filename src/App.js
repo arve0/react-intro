@@ -2,11 +2,17 @@ import React from 'react';
 import ViseVariabler from "./ViseVariabler";
 
 function App() {
-  let sendt = "aaa"
+  let sendt = 0
+
+  function handleClick(value) {
+    console.log(value)
+    sendt += 1 // feil med vilje, state er neste steg
+  }
+
   return (
     <div>
       <p>hallo</p>
-      <ViseVariabler sendt={sendt} />
+      <ViseVariabler sendt={sendt} onClick={handleClick} />
     </div>
   );
 }

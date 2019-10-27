@@ -13,7 +13,7 @@ function ViseVariabler(props) {
   let [første, andre, tredje] = a;
 
   return (
-    <div>
+    <div onClick={() => props.onClick(n)}>
       <p>sendt: {sendt}</p>
       <p>t: {t}</p>
       <p>n: {n}</p>
@@ -23,7 +23,7 @@ function ViseVariabler(props) {
       <p>a: {a}</p>
       <ul>
         {a.map((verdi, indeks) =>
-          <li>{indeks}: {verdi}</li>
+          <li key={indeks}>{indeks}: {verdi}</li>
         )}
       </ul>
       <p>a: {første} + {andre} + {tredje}</p>
