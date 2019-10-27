@@ -1,6 +1,7 @@
 import React from 'react';
 
-function ViseVariabler() {
+function ViseVariabler(props) {
+  let { sendt } = props;
   let t = "tekst"
   let n = 0
   let o = {
@@ -13,6 +14,7 @@ function ViseVariabler() {
 
   return (
     <div>
+      <p>sendt: {sendt}</p>
       <p>t: {t}</p>
       <p>n: {n}</p>
       <p>o.k: {o.k}</p>
@@ -22,7 +24,7 @@ function ViseVariabler() {
       <ul>
         {a.map((verdi, indeks) =>
           <li>{indeks}: {verdi}</li>
-          )}
+        )}
       </ul>
       <p>a: {første} + {andre} + {tredje}</p>
     </div>
