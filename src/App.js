@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ViseVariabler from "./ViseVariabler";
 
 function App() {
-  let sendt = 0
+  let [sendt, setSendt] = useState(0);
 
   function handleClick(value) {
     console.log(value)
-    sendt += 1 // feil med vilje, state er neste steg
+    setSendt(sendt + 1)
   }
 
   return (

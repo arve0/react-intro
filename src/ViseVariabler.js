@@ -13,7 +13,7 @@ function ViseVariabler(props) {
   let [første, andre, tredje] = a;
 
   return (
-    <div onClick={() => props.onClick(n)}>
+    <div onClick={props.onClick}>
       <p>sendt: {sendt}</p>
       <p>t: {t}</p>
       <p>n: {n}</p>
