@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-import ViseVariabler from "./ViseVariabler";
+import Count from "./Count";
 
 function App() {
-  let [sendt, setSendt] = useState(0);
+  let [counts, setCounts] = useState([3, 2, 1]);
 
-  function handleClick(value) {
-    console.log(value)
-    setSendt(sendt + 1)
+  function handleClick(index) {
+    console.log(index)
+    counts[index] += 1;
+    setCounts(counts.slice(0))
   }
 
   return (
     <div>
       <p>hallo</p>
-      <ViseVariabler sendt={sendt} onClick={handleClick} />
+      {counts.map((count, index) =>
+        <Count onClick={() => handleClick(index)} count={count} />
+      )}
     </div>
   );
 }
